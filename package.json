@@ -1,0 +1,110 @@
+{
+  "name": "python-debug-test",
+  "displayName": "Python Debug Test",
+  "description": "Debug individual pytest and unittest tests directly from your code with simple buttons above each test method.",
+  "version": "0.0.1",
+  "publisher": "dcaramello",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcaramello/python-debug-test"
+  },
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Testing",
+    "Debuggers"
+  ],
+  "keywords": [
+    "python",
+    "pytest",
+    "unittest",
+    "testing",
+    "debug"
+  ],
+  "activationEvents": [
+    "workspaceContains:manage.py",
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "icon": "images/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.runPytestTest",
+        "title": "Run with pytest"
+      },
+      {
+        "command": "extension.runUnittestTest",
+        "title": "Run with unittest"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.97.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3",
+    "vscode-test": "^2.4.1"
+  },
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#1e415e",
+    "theme": "dark"
+  },
+  "pricing": "Free",
+  "badges": [
+    {
+      "url": "https://img.shields.io/badge/License-MIT-yellow.svg",
+      "href": "https://opensource.org/licenses/MIT",
+      "description": "MIT License"
+    }
+  ],
+  "markdown": "github",
+  "qna": "https://github.com/dcaramello/python-debug-test/issues",
+  "extensionDependencies": [
+    "ms-python.python"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false,
+      "description": "This extension requires workspace trust to function properly."
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/dcaramello/python-debug-test/blob/main/README.md"
+    },
+    "support": {
+      "uri": "https://github.com/dcaramello/python-debug-test/issues"
+    }
+  },
+  "author": {
+    "name": "Dimitri Caramello"
+  },
+  "homepage": "https://github.com/dcaramello/python-debug-test",
+  "bugs": {
+    "url": "https://github.com/dcaramello/python-debug-test/issues"
+  },
+  "preview": false,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "readme": "./README.md",
+  "readmeFilename": "README.md",
+  "longDescription": {
+    "path": "./README.md"
+  }
+}
